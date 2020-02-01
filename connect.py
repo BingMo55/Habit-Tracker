@@ -9,6 +9,19 @@ class MongoDB:
         # connect to database
         #c collection of users
         self.col = self.db.users
+        self.user = {
+            'name': '',
+            'email': '',
+            'password': '',
+            'number': 0,
+            'habit': []
+        }
+
+        self.habit = {
+            'name': 'Shower',
+            'time': 1,
+            'points': 1
+        }
 
     # habit is an array of habit objects
     def create_user(self,name,email,password,number,habit):
