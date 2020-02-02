@@ -7,20 +7,6 @@ class MongoDB:
         self.client = MongoClient("mongodb+srv://hack2020:hack2020@synitheia-nliiq.mongodb.net/test?retryWrites=true&w=majority")
         self.db = self.client.synitheia
         self.col = self.db.users
-        self.user = {
-            'name': '',
-            'email': '',
-            'password': '',
-            'number': 0,
-            'habit': []
-        }
-
-        self.habit = {
-            'name': 'Shower',
-            'time': 1,
-            'points': 1
-        }
-
 
     def create_user(self,name,email,password,number,habit=[]):
         '''
