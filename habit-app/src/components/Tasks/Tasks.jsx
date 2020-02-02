@@ -46,7 +46,12 @@ export class Tasks extends Component {
   render() {
     //const edit = <Tooltip id="edit_tooltip">Edit Task</Tooltip>;
     const remove = <Tooltip id="remove_tooltip">Remove</Tooltip>;
-    var tasks_title = [];
+    var tasks_title = [
+      "Cold showers",
+      "Running",
+      "Meditation",
+      "Reading"
+    ];
     var tasks = [];
     var number;
     var habit;
@@ -58,7 +63,8 @@ export class Tasks extends Component {
         localStorage.setItem('habits', (response.data['response']));
       })
       var arr = localStorage.getItem('habits');
-      var res = arr.split(",");
+      var res =  (this.state.user.habit.length > 0) ? arr.split(",") : [];
+      console.log(res);
   
       //tasks_title.push(arr); 
   
@@ -86,11 +92,11 @@ export class Tasks extends Component {
               </Button>
             </OverlayTrigger> */}
 
-            <OverlayTrigger placement="top" overlay={remove}>
+            {/* <OverlayTrigger placement="top" overlay={remove}>
               <Button bsStyle="danger" simple type="button" bsSize="xs">
                 <i className="fa fa-times" />
               </Button>
-            </OverlayTrigger>
+            </OverlayTrigger> */}
           </td>
         </tr>
       );

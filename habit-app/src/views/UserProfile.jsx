@@ -59,11 +59,32 @@ class UserProfile extends Component {
           <Row>
             <Col md={8}>
               <Card
-                title="Signup"
+                title="Registration"
                 content={
                   <form>
                     <FormInputs
-                      ncols={["col-md-5", "col-md-7"]}
+                      ncols={["col-md-6", "col-md-6"]}
+                      properties={[
+                        {
+                          id: "name",
+                          name: "name",
+                          label: "Full name",
+                          type: "text",
+                          bsClass: "form-control",
+                          placeholder: "Name",
+                        },
+                        {
+                          id: "number",
+                          name: "number",
+                          label: "Phone Number",
+                          type: "text",
+                          bsClass: "form-control",
+                          placeholder: "Phone Number",
+                        }
+                      ]}
+                    />
+                    <FormInputs
+                      ncols={["col-md-6", "col-md-6"]}
                       properties={[
                         {
                           name: "username",
@@ -83,27 +104,6 @@ class UserProfile extends Component {
                         }
                       ]}
                     />
-                    <FormInputs
-                      ncols={["col-md-6", "col-md-6"]}
-                      properties={[
-                        {
-                          id: "name",
-                          name: "name",
-                          label: "First name",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "First name",
-                        },
-                        {
-                          id: "number",
-                          name: "number",
-                          label: "Phone Number",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "Phone Number",
-                        }
-                      ]}
-                    />
                     {/* <FormInputs
                       ncols={["col-md-12"]}
                       properties={[
@@ -116,7 +116,7 @@ class UserProfile extends Component {
                       ]}
                     /> */}
                     <FormInputs
-                      ncols={["col-md-4"]}
+                      ncols={["col-md-6", "col-md-6"]}
                       properties={[
                         {
                           id: "password",
@@ -125,6 +125,13 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Password",
+                        },
+                        {
+                          name: "cpassword",
+                          label: "Confirm Password",
+                          type: "text",
+                          bsClass: "form-control",
+                          placeholder: "Confirm Password",
                         }
                       ]}
                     />
@@ -141,30 +148,6 @@ class UserProfile extends Component {
                     </Button>
                     <div className="clearfix" />
                   </form>
-                }
-              />
-            </Col>
-            <Col md={4}>
-              <UserCard
-                bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
-                avatar={avatar}
-                name="Mike Andrew"
-                userName="michael24"
-                description={
-                  ""
-                }
-                socials={
-                  <div>
-                    <Button simple>
-                      <i className="fa fa-facebook-square" />
-                    </Button>
-                    <Button simple>
-                      <i className="fa fa-twitter" />
-                    </Button>
-                    <Button simple>
-                      <i className="fa fa-google-plus-square" />
-                    </Button>
-                  </div>
                 }
               />
             </Col>

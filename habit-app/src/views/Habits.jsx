@@ -27,6 +27,7 @@ export default class Habits extends Component{
         bodyFormData.set('email', this.state.user.email);
         bodyFormData.set('habit', textInput);
         axios.post('http://052f0d15.ngrok.io/addhabit',bodyFormData);
+        window.location.reload();
     }
     render(){
 
@@ -36,8 +37,8 @@ export default class Habits extends Component{
             <div class="col-md-4 col-md-offset-4">
               <Card
                 title="Habits"
-                category="Your habits"
-                stats="Updated 3 minutes ago"
+                category="Check-in"
+                stats="Updated just now"
                 statsIcon="fa fa-history"
                 content={
                   <div className="table-full-width">
@@ -50,7 +51,7 @@ export default class Habits extends Component{
             <FormControl ref={this.textInput} type="text">
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Add Habit</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id="input"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="999"id="input"></textarea>
             </div>
               <Button onClick={()=>(this.addHabit())}>Add Habit</Button>
             </FormControl >

@@ -61,14 +61,16 @@ class Sidebar extends Component {
             className="simple-text logo-mini"
           >
             <div className="logo-img">
-              <img src={logo} alt="logo_image" />
+            {/* <i className="pe-7s-smile"></i> */}
+              {/* <img src={logo} alt="logo_image" /> */}
             </div>
           </a>
+
           <a
             href="https://www.google.com"
-            className="simple-text logo-normal"
+            className="simple-text"
           >
-            HabitsApp
+            synitheia
           </a>
         </div>
         <div className="sidebar-wrapper">

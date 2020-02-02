@@ -25,6 +25,13 @@ class Footer extends Component {
         <Grid fluid>
           <nav className="pull-left">
             <ul>
+            <li>
+            <a>
+              Made with ♥ in Irvine, CA
+            </a>
+            </li>
+            </ul>
+            {/* <ul>
               <li>
                 <a href="#pablo">Home</a>
               </li>
@@ -37,15 +44,15 @@ class Footer extends Component {
               <li>
                 <a href="#pablo">Blog</a>
               </li>
-            </ul>
+            </ul> */}
           </nav>
-          <p className="copyright pull-right">
+          {/* <p className="copyright pull-right">
             &copy; {new Date().getFullYear()}{" "}
             <a href="http://www.creative-tim.com?ref=lbr-footer">
               Creative Tim
             </a>
             , made with love for a better web
-          </p>
+          </p> */}
         </Grid>
       </footer>
     );

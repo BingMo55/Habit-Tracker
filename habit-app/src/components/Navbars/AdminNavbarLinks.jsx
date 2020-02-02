@@ -27,7 +27,7 @@ class AdminNavbarLinks extends Component {
       <div>
         <i className="fa fa-globe" />
         <b className="caret" />
-        <span className="notification">5</span>
+        <span className="notification">3</span>
         <p className="hidden-lg hidden-md">Notification</p>
       </div>
     );
@@ -44,11 +44,9 @@ class AdminNavbarLinks extends Component {
             noCaret
             id="basic-nav-dropdown"
           >
-            <MenuItem eventKey={2.1}>Notification 1</MenuItem>
-            <MenuItem eventKey={2.2}>Notification 2</MenuItem>
-            <MenuItem eventKey={2.3}>Notification 3</MenuItem>
-            <MenuItem eventKey={2.4}>Notification 4</MenuItem>
-            <MenuItem eventKey={2.5}>Another notifications</MenuItem>
+            <MenuItem eventKey={2.1}>Daily reminder to study!</MenuItem>
+            <MenuItem eventKey={2.2}>You logged in for 24 days in a row!</MenuItem>
+            <MenuItem eventKey={2.3}>Your statistics for January are ready to view.</MenuItem>
           </NavDropdown>
           <NavItem eventKey={3} href="#">
             <i className="fa fa-search" />
@@ -59,7 +57,7 @@ class AdminNavbarLinks extends Component {
           <NavItem eventKey={1} href="#">
             Account
           </NavItem>
-          <NavDropdown
+          {/* <NavDropdown
             eventKey={2}
             title="Dropdown"
             id="basic-nav-dropdown-right"
@@ -71,7 +69,7 @@ class AdminNavbarLinks extends Component {
             <MenuItem eventKey={2.5}>Something</MenuItem>
             <MenuItem divider />
             <MenuItem eventKey={2.5}>Separated link</MenuItem>
-          </NavDropdown>
+          </NavDropdown> */}
           <NavItem eventKey={3} href="#">
             Log out
           </NavItem>

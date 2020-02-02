@@ -28,7 +28,7 @@ import { style } from "variables/Variables.jsx";
 
 import routes from "routes.js";
 
-import image from "assets/img/sidebar-3.jpg";
+import image from "assets/img/sidebar-2.jpg";
 
 class Admin extends Component {
   constructor(props) {
@@ -64,7 +64,7 @@ class Admin extends Component {
       title: <span data-notify="icon" className="pe-7s-gift" />,
       message: (
         <div>
-          Welcome to <b>Habit app</b> - insert slogan here!
+          Welcome to <b>Synitheia</b> - insert slogan here!
         </div>
       ),
       level: level,
@@ -124,28 +124,28 @@ class Admin extends Component {
     this.setState({ _notificationSystem: this.refs.notificationSystem });
     var _notificationSystem = this.refs.notificationSystem;
     var color = Math.floor(Math.random() * 4 + 1);
-    var level;
-    switch (color) {
-      case 1:
-        level = "success";
-        break;
-      case 2:
-        level = "warning";
-        break;
-      case 3:
-        level = "error";
-        break;
-      case 4:
-        level = "info";
-        break;
-      default:
-        break;
-    }
+    var level = "info";
+    // switch (color) {
+    //   case 1:
+    //     level = "success";
+    //     break;
+    //   case 2:
+    //     level = "warning";
+    //     break;
+    //   case 3:
+    //     level = "error";
+    //     break;
+    //   case 4:
+    //     level = "info";
+    //     break;
+    //   default:
+    //     break;
+    // }
     _notificationSystem.addNotification({
-      title: <span data-notify="icon" className="pe-7s-gift" />,
+      title: <span data-notify="icon" className="pe-7s-smile" />,
       message: (
         <div>
-        Welcome to <b>Habit app</b> - insert slogan here!
+        Welcome to <b>Synitheia</b> - start living your best life today!
         </div>
       ),
       level: level,

@@ -493,31 +493,40 @@ const iconsArray = [
 //
 // Data for Pie Chart
 var dataPie = {
-  labels: ["40%", "20%", "40%"],
-  series: [40, 20, 40]
+  labels: ["35%", "20%", "15%", "30%"],
+  series: [35, 20, 15, 30]
 };
 var legendPie = {
-  names: ["Sleeping", "Meditating", "Gym"],
-  types: ["info", "danger", "warning"]
+  names: ["Study", "Meditation", "Exercise", "Entertainment"],
+  types: ["info", "danger", "warning", "error"]
 };
 
 // Data for Line Chart
 var dataSales = {
   labels: [
-    "Week 1",
-    "Week 2",
-    "Week 3",
-    "Week 4"
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
   ],
   series: [
-    [1, 0, 1, 2, 3, 0, 0],
-    [2, 0, 2, 0, 2, 4, 5],
-    [2, 3, 7, 0, 1, 4, 3]
+    [25, 20, 18, 12, 22, 16, 13, 12, 10, 15, 20, 13],
+    [12, 15, 18, 21, 5, 13, 7, 10, 4, 13, 12, 15],
+    [0, 3, 10, 15, 25, 15, 12, 11, 10, 9, 4, 15],
+    [20, 25, 30, 28, 26, 28, 30, 24, 22, 19, 25, 18]
   ]
 };
 var optionsSales = {
   low: 0,
-  high: 7,
+  high: 30,
   showArea: false,
   height: "245px",
   axisX: {
@@ -544,8 +553,8 @@ var responsiveSales = [
   ]
 ];
 var legendSales = {
-  names: ["Sleeping", "Meditating", "Gym"],
-  types: ["info", "danger", "warning"]
+  names: ["Study", "Meditation", "Exercise", "Entertainment"],
+  types: ["info", "danger", "warning", "error"]
 };
 
 // Data for Bar Chart
@@ -565,16 +574,25 @@ var dataBar = {
     "Dec"
   ],
   series: [
-    [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
-    [412, 243, 280, 580, 453, 353, 300, 364, 368, 410, 636, 695]
+    [20, 15, 30, 45, 50, 37, 25, 33, 41, 48, 35, 25]
+    //[412, 243, 280, 580, 453, 353, 300, 364, 368, 410, 636, 695]
   ]
 };
 var optionsBar = {
-  seriesBarDistance: 15,
+  low: 0,
+  high: 50,
+  showArea: false,
+  height: "245px",
   axisX: {
     showGrid: false
   },
-  height: "245px"
+  lineSmooth: true,
+  showLine: true,
+  showPoint: true,
+  fullWidth: true,
+  chartPadding: {
+    right: 50
+  }
 };
 var responsiveBar = [
   [
@@ -590,7 +608,7 @@ var responsiveBar = [
   ]
 ];
 var legendBar = {
-  names: ["Tesla Model S", "BMW 5 Series"],
+  names: ["Mood Rating"],
   types: ["info", "danger"]
 };
 

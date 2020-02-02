@@ -83,12 +83,14 @@ class Dashboard extends Component {
               <StatsCard
                 bigIcon={<i className="pe-7s-graph1 text-danger" />}
                 statsText="Check Ins"
-                statsValue="23"
+                statsValue="24"
                 statsIcon={<i className="fa fa-clock-o" />}
                 statsIconText="In the last month"
               />
             </Col>
-            <p>Today's date: {this.state.date}</p>
+            <div className="h6">
+            <p>Today's date - {this.state.date}</p>
+            </div>
             {/* <Col lg={3} sm={6}>
               <StatsCard
                 bigIcon={<i className="fa fa-twitter text-info" />}
@@ -105,7 +107,7 @@ class Dashboard extends Component {
                 statsIcon="fa fa-history"
                 id="chartHours"
                 title="Check Ins"
-                category="Over the past 30 days"
+                category="Over the past year"
                 stats="Updated 3 minutes ago"
                 content={
                   <div className="ct-chart">
@@ -147,9 +149,9 @@ class Dashboard extends Component {
             <Col md={6}>
               <Card
                 id="chartActivity"
-                title="Your Habit Activity"
-                category="have you been doing your habits?"
-                stats="Data information certified"
+                title="Happiness Graph"
+                category="Over the last year"
+                stats="Up to date"
                 statsIcon="fa fa-check"
                 content={
                   <div className="ct-chart">

@@ -67,10 +67,11 @@ export default class Login extends Component{
                                     }
                                 ]}
                                 />
+                                
                                 <Button bsStyle="info" pullLeft fill onClick={()=>(this.signIn())}>
                                 Sign in</Button>
-                                <Button bsStyle="info" fill onClick={()=>(this.route('/admin/user'))}>
-                                Register</Button>
+                                {/* <Button bsStyle="info" fill onClick={()=>(this.route('/admin/user'))}>
+                                Register</Button> */}
                             </form>
                             }
                         />
