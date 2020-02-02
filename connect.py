@@ -2,7 +2,6 @@ from pymongo import MongoClient
 from habit import habit
 import json
 class MongoDB:
-    
     def __init__(self):
         # connect to cluster
         self.client = MongoClient("mongodb+srv://hack2020:hack2020@synitheia-nliiq.mongodb.net/test?retryWrites=true&w=majority")
@@ -53,15 +52,10 @@ class MongoDB:
         index =0;
         for dictionary in habitArr:
             if dictionary["habit"] == habitname:
-                print(index)
-                print(habitArr)
                 break;
             index+=1
         del habitArr[index]
         self.set_value(email,"habit",habitArr)
-
-    def change_password(self, email):
-        pass
 
     def set_value(self, email, key, value):
         '''
@@ -86,24 +80,3 @@ class MongoDB:
         users = self.col.find({"email":email});
         return users[0][key]
     
-
-    
-def main():
-    database = MongoDB()
-
-    habit1 = habit("do push ups")
-    habit2 = habit("do 10 push ups")
-    # print(database.get_val("mob@uci.edu","name"))
-    # database.add_habit("mob@uci.edu", [{"name":"value","Streak":9},{"chocolate":"value","streak":10}])
-    # database.set_value("mob@uci.edu","habit",[])
-    # database.add_habit("mob@uci.edu",habit1.json())
-    # database.remove_habit("mob@uci.edu",habit1.getName())
-    print(database.get_val("mob@uci.edu","email"))
-    database.set_value("mob@uci.edu","name","bing Mo")
-                        
-                        
-    
-    # database.add_habit("moob@uci.edu",habit2)
-    
-
-main()
