@@ -17,8 +17,11 @@
 */
 import React, { Component } from "react";
 import { NavItem, Nav, NavDropdown, MenuItem } from "react-bootstrap";
+import {Link} from 'react-router-dom';
+import Account from "views/Account.jsx";
 
 class AdminNavbarLinks extends Component {
+
   render() {
     const notification = (
       <div>

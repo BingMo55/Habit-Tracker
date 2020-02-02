@@ -42,14 +42,14 @@ class UserProfile extends Component {
     console.log('test');
     var bodyFormData = new FormData();
 
-      bodyFormData.set('username', document.getElementById("username").value);
-      bodyFormData.set('email', document.getElementById("email").value);
-      bodyFormData.set('name', document.getElementById("name").value);
-      bodyFormData.set('number', document.getElementById("number").value);
-      bodyFormData.set('password', document.getElementById("password").value);
-      bodyFormData.set('habit', document.getElementById("habit").value);
+    bodyFormData.set('username', document.getElementById("username").value);
+    bodyFormData.set('email', document.getElementById("email").value);
+    bodyFormData.set('name', document.getElementById("name").value);
+    bodyFormData.set('number', document.getElementById("number").value);
+    bodyFormData.set('password', document.getElementById("password").value);
 
-    axios.post('http://9327f75a.ngrok.io/user', bodyFormData);
+    axios.post('http://052f0d15.ngrok.io/user', bodyFormData);
+    this.props.history.push('/admin/logins');
   }
 
   render() {
@@ -116,7 +116,7 @@ class UserProfile extends Component {
                       ]}
                     /> */}
                     <FormInputs
-                      ncols={["col-md-4", "col-md-4"]}
+                      ncols={["col-md-4"]}
                       properties={[
                         {
                           id: "password",
@@ -125,14 +125,6 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Password",
-                        },
-                        {
-                          id: "habit",
-                          name: "habit",
-                          label: "Habit",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "Habit",
                         }
                       ]}
                     />
@@ -145,7 +137,7 @@ class UserProfile extends Component {
                       </Col>
                     </Row>
                     <Button bsStyle="info" pullRight fill onClick={() => {this.makePostRequest()}}>
-                      Update Profile
+                      Register
                     </Button>
                     <div className="clearfix" />
                   </form>

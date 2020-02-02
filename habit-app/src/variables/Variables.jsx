@@ -497,31 +497,27 @@ var dataPie = {
   series: [40, 20, 40]
 };
 var legendPie = {
-  names: ["Open", "Bounce", "Unsubscribe"],
+  names: ["Sleeping", "Meditating", "Gym"],
   types: ["info", "danger", "warning"]
 };
 
 // Data for Line Chart
 var dataSales = {
   labels: [
-    "9:00AM",
-    "12:00AM",
-    "3:00PM",
-    "6:00PM",
-    "9:00PM",
-    "12:00PM",
-    "3:00AM",
-    "6:00AM"
+    "Week 1",
+    "Week 2",
+    "Week 3",
+    "Week 4"
   ],
   series: [
-    [287, 385, 490, 492, 554, 586, 698, 695],
-    [67, 152, 143, 240, 287, 335, 435, 437],
-    [23, 113, 67, 108, 190, 239, 307, 308]
+    [1, 0, 1, 2, 3, 0, 0],
+    [2, 0, 2, 0, 2, 4, 5],
+    [2, 3, 7, 0, 1, 4, 3]
   ]
 };
 var optionsSales = {
   low: 0,
-  high: 800,
+  high: 7,
   showArea: false,
   height: "245px",
   axisX: {
@@ -548,7 +544,7 @@ var responsiveSales = [
   ]
 ];
 var legendSales = {
-  names: ["Open", "Click", "Click Second Time"],
+  names: ["Sleeping", "Meditating", "Gym"],
   types: ["info", "danger", "warning"]
 };
 
@@ -574,7 +570,7 @@ var dataBar = {
   ]
 };
 var optionsBar = {
-  seriesBarDistance: 10,
+  seriesBarDistance: 15,
   axisX: {
     showGrid: false
   },

@@ -16,20 +16,29 @@
 
 */
 import React, { Component } from "react";
+import axios from 'axios';
 
 class CustomCheckbox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      is_checked: props.isChecked ? true : false
+      is_checked: props.isChecked ? true : false,
+      user: JSON.parse(localStorage.getItem('data'))
     };
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
     this.setState({ is_checked: !this.state.is_checked });
+    if (!this.state.is_checked){
+      var bodyFormData = new FormData();
+      bodyFormData.set('email', this.state.user.email);
+      bodyFormData.set('habit', this.props.habit);
+      axios.post('http://9327f75a.ngrok.io/checkin',bodyFormData);
+      console.log("success");
+    }
   }
   render() {
-    const { isChecked, number, label, inline, ...rest } = this.props;
+    const { isChecked, habit, number, label, inline, ...rest } = this.props;
     const classes =
       inline !== undefined ? "checkbox checkbox-inline" : "checkbox";
     return (
