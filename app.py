@@ -41,8 +41,6 @@ def user():
 		db.add_user(name, email, password, number, habit)	
 		return jsonify({'args': request.form})
 
-@app.route('/user', methods=['POST'])
-
 
 if __name__ == '__main__':
 	app.debug = True
