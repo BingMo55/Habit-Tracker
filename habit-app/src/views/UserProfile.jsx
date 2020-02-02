@@ -40,28 +40,21 @@ class UserProfile extends Component {
           <Row>
             <Col md={8}>
               <Card
-                title="Edit Profile"
+                title="Signup"
                 content={
-                  <form>
+                  <form action="/URLENDPOINT" method="post">
                     <FormInputs
-                      ncols={["col-md-5", "col-md-3", "col-md-4"]}
+                      ncols={["col-md-5", "col-md-7"]}
                       properties={[
                         {
-                          label: "Company (disabled)",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "Company",
-                          defaultValue: "Creative Code Inc.",
-                          disabled: true
-                        },
-                        {
+                          name: "username",
                           label: "Username",
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Username",
-                          defaultValue: "michael23"
                         },
                         {
+                          name: "email",
                           label: "Email address",
                           type: "email",
                           bsClass: "form-control",
@@ -73,35 +66,33 @@ class UserProfile extends Component {
                       ncols={["col-md-6", "col-md-6"]}
                       properties={[
                         {
+                          name: "fname",
                           label: "First name",
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "First name",
-                          defaultValue: "Mike"
                         },
                         {
+                          name: "lname",
                           label: "Last name",
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Last name",
-                          defaultValue: "Andrew"
                         }
                       ]}
                     />
-                    <FormInputs
+                    {/* <FormInputs
                       ncols={["col-md-12"]}
                       properties={[
                         {
-                          label: "Adress",
+                          label: "Address",
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Home Adress",
-                          defaultValue:
-                            "Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
                         }
                       ]}
-                    />
-                    <FormInputs
+                    /> */}
+                    {/* <FormInputs
                       ncols={["col-md-4", "col-md-4", "col-md-4"]}
                       properties={[
                         {
@@ -109,14 +100,12 @@ class UserProfile extends Component {
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "City",
-                          defaultValue: "Mike"
                         },
                         {
                           label: "Country",
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "Country",
-                          defaultValue: "Andrew"
                         },
                         {
                           label: "Postal Code",
@@ -125,7 +114,7 @@ class UserProfile extends Component {
                           placeholder: "ZIP Code"
                         }
                       ]}
-                    />
+                    /> */}
 
                     <Row>
                       <Col md={12}>
@@ -136,7 +125,6 @@ class UserProfile extends Component {
                             componentClass="textarea"
                             bsClass="form-control"
                             placeholder="Here can be your description"
-                            defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
                           />
                         </FormGroup>
                       </Col>
@@ -156,13 +144,7 @@ class UserProfile extends Component {
                 name="Mike Andrew"
                 userName="michael24"
                 description={
-                  <span>
-                    "Lamborghini Mercy
-                    <br />
-                    Your chick she so thirsty
-                    <br />
-                    I'm in that two seat Lambo"
-                  </span>
+                  ""
                 }
                 socials={
                   <div>
