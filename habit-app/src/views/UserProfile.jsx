@@ -16,6 +16,8 @@
 
 */
 import React, { Component } from "react";
+import axios from 'axios';
+
 import {
   Grid,
   Row,
@@ -33,6 +35,16 @@ import Button from "components/CustomButton/CustomButton.jsx";
 import avatar from "assets/img/faces/face-3.jpg";
 
 class UserProfile extends Component {
+
+  axios = require('axios');
+  
+  makePostRequest() {
+    var params = {
+      username: document.getElementById("01")
+    }
+    axios.post('http://9327f75a.ngrok.io/user', params);
+  }
+
   render() {
     return (
       <div className="content">
@@ -42,7 +54,7 @@ class UserProfile extends Component {
               <Card
                 title="Signup"
                 content={
-                  <form action="/URLENDPOINT" method="post">
+                  <form>
                     <FormInputs
                       ncols={["col-md-5", "col-md-7"]}
                       properties={[
@@ -50,6 +62,7 @@ class UserProfile extends Component {
                           name: "username",
                           label: "Username",
                           type: "text",
+                          id: "01",
                           bsClass: "form-control",
                           placeholder: "Username",
                         },
@@ -66,18 +79,18 @@ class UserProfile extends Component {
                       ncols={["col-md-6", "col-md-6"]}
                       properties={[
                         {
-                          name: "fname",
+                          name: "name",
                           label: "First name",
                           type: "text",
                           bsClass: "form-control",
                           placeholder: "First name",
                         },
                         {
-                          name: "lname",
-                          label: "Last name",
+                          name: "number",
+                          label: "Phone Number",
                           type: "text",
                           bsClass: "form-control",
-                          placeholder: "Last name",
+                          placeholder: "Phone Number",
                         }
                       ]}
                     />
@@ -92,44 +105,34 @@ class UserProfile extends Component {
                         }
                       ]}
                     /> */}
-                    {/* <FormInputs
-                      ncols={["col-md-4", "col-md-4", "col-md-4"]}
+                    <FormInputs
+                      ncols={["col-md-4", "col-md-4"]}
                       properties={[
                         {
-                          label: "City",
+                          name: "password",
+                          label: "Password",
                           type: "text",
                           bsClass: "form-control",
-                          placeholder: "City",
+                          placeholder: "Password",
                         },
                         {
-                          label: "Country",
+                          name: "habit",
+                          label: "Habit",
                           type: "text",
                           bsClass: "form-control",
-                          placeholder: "Country",
-                        },
-                        {
-                          label: "Postal Code",
-                          type: "number",
-                          bsClass: "form-control",
-                          placeholder: "ZIP Code"
+                          placeholder: "Habit",
                         }
                       ]}
-                    /> */}
+                    />
 
                     <Row>
                       <Col md={12}>
                         <FormGroup controlId="formControlsTextarea">
-                          <ControlLabel>About Me</ControlLabel>
-                          <FormControl
-                            rows="5"
-                            componentClass="textarea"
-                            bsClass="form-control"
-                            placeholder="Here can be your description"
-                          />
+                          
                         </FormGroup>
                       </Col>
                     </Row>
-                    <Button bsStyle="info" pullRight fill type="submit">
+                    <Button bsStyle="info" pullRight fill onClick={() => {this.makePostRequest()}}>
                       Update Profile
                     </Button>
                     <div className="clearfix" />
