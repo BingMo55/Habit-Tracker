@@ -3,10 +3,12 @@ from flask import Flask, render_template, request, jsonify
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 import yaml
+from flask_cors import CORS
 
 
 app = Flask(__name__)
 db = MongoDB()
+CORS(app)
 
 @app.route('/')
 def index():
@@ -30,7 +32,7 @@ def form():
 @app.route('/user', methods=['POST'])
 def user():
 	if request.method == 'POST':
-
+		print("request", request.form)
 		name = request.form["name"]
 		username = request.form["username"]
 		email = request.form["email"]
