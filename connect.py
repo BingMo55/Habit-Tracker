@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from habit import habit
 import json
 class MongoDB:
     
@@ -6,12 +7,14 @@ class MongoDB:
         # connect to cluster
         self.client = MongoClient("mongodb+srv://hack2020:hack2020@synitheia-nliiq.mongodb.net/test?retryWrites=true&w=majority")
         self.db = self.client.synitheia
-        # connect to database
-        #c collection of users
         self.col = self.db.users
 
-    # habit is an array of habit objects
-    def create_user(self,name,email,password,number,habit):
+
+    def create_user(self,name,email,password,number,habit=[]):
+        '''
+        given a name, email, password, number we return
+        a the json of the user data document
+        '''
         user_data ={
             "name":name,
             "email":email,
@@ -21,18 +24,86 @@ class MongoDB:
         }
         return user_data
     
-    def add_user(self,name,email,password,number,habit):
+    def add_user(self,name,email,password,number,habit=[]):
+        '''
+        given a name, email, password, number, we take the
+        json return value from create_user function and insert
+        it into the collection
+        '''
         user = self.create_user(name,email,password,number,habit)
         self.col.insert_one(user)
+    
+    def add_habit(self, email,habit):
+        ''' 
+        get current arry of habit objs and append the new habit oject into it
+        then update the database's current habit array to this new array
+        '''
+        habitArr = self.get_val(email, "habit") # returns an array of json objects
+        habitArr.append(habit);
+        self.set_value(email,"habit",habitArr)
 
-    # def modify_user(self,user_email):
+    def remove_habit(self, email,habitname):
+        '''
+        given a string habitname, we locate where it is in our array 
+        and return its corresponding index. The function then takes the index
+        and removes the value that exists there and update the habit array
+        in mongodb 
+        '''
+        habitArr = self.get_val(email, "habit")
+        index =0;
+        for dictionary in habitArr:
+            if dictionary["habit"] == habitname:
+                print(index)
+                print(habitArr)
+                break;
+            index+=1
+        del habitArr[index]
+        self.set_value(email,"habit",habitArr)
 
+    def change_password(self, email):
+        pass
 
-    # def 
+    def set_value(self, email, key, value):
+        '''
+        given an email, key and value, we locate the document 
+        associated with our email and change the corresponding 
+        value of the key given
+        '''
+        self.col.update_one(
+            {"email": email},
+            {
+                "$set": {
+                    key:value
+                }
+            }
+        )
+
+    def get_val(self, email, key):
+        '''
+        given an email and key, the fuction locates the value
+        and returns it
+        '''
+        users = self.col.find({"email":email});
+        return users[0][key]
+    
+
+    
 def main():
     database = MongoDB()
-    database.add_user("bing","mob@uci.edu","sda","dsadsa",["1","12"])
+
+    habit1 = habit("do push ups")
+    habit2 = habit("do 10 push ups")
+    # print(database.get_val("mob@uci.edu","name"))
+    # database.add_habit("mob@uci.edu", [{"name":"value","Streak":9},{"chocolate":"value","streak":10}])
+    # database.set_value("mob@uci.edu","habit",[])
+    # database.add_habit("mob@uci.edu",habit1.json())
+    # database.remove_habit("mob@uci.edu",habit1.getName())
+    print(database.get_val("mob@uci.edu","email"))
+    database.set_value("mob@uci.edu","name","bing Mo")
+                        
+                        
     
+    # database.add_habit("moob@uci.edu",habit2)
     
 
 main()
