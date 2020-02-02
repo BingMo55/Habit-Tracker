@@ -39,10 +39,17 @@ class UserProfile extends Component {
   axios = require('axios');
   
   makePostRequest() {
-    var params = {
-      username: document.getElementById("01")
-    }
-    axios.post('http://9327f75a.ngrok.io/user', params);
+    console.log('test');
+    var bodyFormData = new FormData();
+
+      bodyFormData.set('username', document.getElementById("username").value);
+      bodyFormData.set('email', document.getElementById("email").value);
+      bodyFormData.set('name', document.getElementById("name").value);
+      bodyFormData.set('number', document.getElementById("number").value);
+      bodyFormData.set('password', document.getElementById("password").value);
+      bodyFormData.set('habit', document.getElementById("habit").value);
+
+    axios.post('http://9327f75a.ngrok.io/user', bodyFormData);
   }
 
   render() {
@@ -62,11 +69,12 @@ class UserProfile extends Component {
                           name: "username",
                           label: "Username",
                           type: "text",
-                          id: "01",
+                          id: "username",
                           bsClass: "form-control",
                           placeholder: "Username",
                         },
                         {
+                          id: "email",
                           name: "email",
                           label: "Email address",
                           type: "email",
@@ -79,6 +87,7 @@ class UserProfile extends Component {
                       ncols={["col-md-6", "col-md-6"]}
                       properties={[
                         {
+                          id: "name",
                           name: "name",
                           label: "First name",
                           type: "text",
@@ -86,6 +95,7 @@ class UserProfile extends Component {
                           placeholder: "First name",
                         },
                         {
+                          id: "number",
                           name: "number",
                           label: "Phone Number",
                           type: "text",
@@ -109,6 +119,7 @@ class UserProfile extends Component {
                       ncols={["col-md-4", "col-md-4"]}
                       properties={[
                         {
+                          id: "password",
                           name: "password",
                           label: "Password",
                           type: "text",
@@ -116,6 +127,7 @@ class UserProfile extends Component {
                           placeholder: "Password",
                         },
                         {
+                          id: "habit",
                           name: "habit",
                           label: "Habit",
                           type: "text",
